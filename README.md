@@ -9,7 +9,8 @@ There are some things to pay attention and have in mind before using it:
 
 - The main script is the BASH script: Maybe all could be solved inside the Python script, but for me it was faster this way because I only wanted the Python script output SQL sentences without knowing anything about MySQL.
 - There is no implementation for passing paramenters: Both script should be opened and modified accordingly to set the DB name, user, server, etc
-- The Data Types from Postgres to MySQL may be incomplete. I only converted the types that was present in my DB. If later on other DBs should be migrated, I will add support for mising types. If some type is not covered, it will be outputed as FIXME.
+- The BASH script must be called from the server where the MySQL is running and I assume that "root" is the user. See the BASH script for the callings on the mysql program.
+- The Data Types from Postgres to MySQL may be incomplete. I only converted the types that was present in my DB. If later on other DBs should be migrated, I will add support for missing types. If some type is not covered, it will be outputed as FIXME.
 - The logging information and docs inside code could be improved a lot. I just didn't have time to do it. 
 - The code asume that the /tmp folder exists, and there will be exported all data as CSV.
 - The connection to Postgres is opened as READONLY.
